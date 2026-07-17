@@ -27,7 +27,7 @@ export function useProductComparison() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  const [viewMode, setViewMode] = useState<ViewMode>("product");
+  const [viewMode, setViewMode] = useState<ViewMode>("store");
   const [sortOrder, setSortOrder] = useState<SortOrder>("asc");
   const [selectedStores, setSelectedStores] = useState<Set<string>>(new Set());
   const [selectedRam, setSelectedRam] = useState<Set<string>>(new Set());

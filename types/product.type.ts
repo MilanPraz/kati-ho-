@@ -8,10 +8,12 @@ export interface Product {
   storage: string | null;
   price: number;
   price_text: string;
+  discounted_price: number | null;
   price_type: "starting" | "exact" | string;
   currency: string;
   product_url: string;
   source_url: string;
+  image_url: string | null;
   in_stock: boolean;
   scraped_at: string;
   id: string;
