@@ -272,7 +272,7 @@ export default function KatiHoLandingPage() {
               </p>
 
               {/* Search box */}
-              <SearchBarHome />
+              <SearchBarHome isHomePage={true} />
               <p className="mt-4 text-[15px] font-semibold text-primary-dark">
                 Find cheaper deals. Compare variants. Save money.
               </p>

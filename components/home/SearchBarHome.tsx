@@ -17,7 +17,7 @@ type Suggestion = {
 
 type SearchBarHomeProps = {
   className?: string;
-
+  isHomePage: boolean;
   // Controlled input value from parent
   value?: string;
 
@@ -36,6 +36,7 @@ export default function SearchBarHome({
   value,
   onValueChange,
   onSearch,
+  isHomePage,
   placeholder = "Search Samsung S25, iPhone 15, Redmi 13...",
   size = "large",
 }: SearchBarHomeProps) {
@@ -298,7 +299,9 @@ export default function SearchBarHome({
       </div>
 
       {showSuggestions && (
-        <div className="absolute left-0 right-0 top-full z-[9999] mt-2 max-h-[360px] overflow-y-auto rounded-2xl border border-line bg-white shadow-xl">
+        <div
+          className={`absolute left-0 right-0 top-full z-[9999] mt-2 ${isHomePage ? "max-h-[150px] bg-red-500 " : "max-h-[360px] "} overflow-y-auto rounded-2xl border border-line bg-white shadow-xl`}
+        >
           {isLoading && (
             <div className="px-4 py-3 text-sm text-muted-light">
               Searching...
