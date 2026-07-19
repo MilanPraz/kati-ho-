@@ -8,12 +8,11 @@ export interface Product {
   storage: string | null;
   price: number;
   price_text: string;
-  discounted_price: number | null;
   price_type: "starting" | "exact" | string;
   currency: string;
   product_url: string;
   source_url: string;
-  image_url: string | null;
+  image_url?: string | null;
   in_stock: boolean;
   scraped_at: string;
   id: string;
@@ -27,3 +26,32 @@ export interface ProductsApiResponse {
   data: Product[];
   cached: boolean;
 }
+// export interface Product {
+//   store: string;
+//   category: string;
+//   brand: string;
+//   model_name: string;
+//   variant: string | null;
+//   ram: string | null;
+//   storage: string | null;
+//   price: number;
+//   price_text: string;
+//   discounted_price: number | null;
+//   price_type: "starting" | "exact" | string;
+//   currency: string;
+//   product_url: string;
+//   source_url: string;
+//   image_url: string | null;
+//   in_stock: boolean;
+//   scraped_at: string;
+//   id: string;
+//   created_at: string;
+//   updated_at: string;
+// }
+
+// export interface ProductsApiResponse {
+//   message: string;
+//   count: number;
+//   data: Product[];
+//   cached: boolean;
+// }
