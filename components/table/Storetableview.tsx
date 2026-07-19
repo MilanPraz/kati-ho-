@@ -32,7 +32,6 @@ function toTableGroups(storeGroups: StoreGroup[]): TableGroup[] {
 }
 
 export function StoreTableView({ storeGroups }: { storeGroups: StoreGroup[] }) {
-  console.log("StoreTableView storeGroups:", storeGroups); // Debugging line
   return (
     <ComparisonTable
       groups={toTableGroups(storeGroups)}

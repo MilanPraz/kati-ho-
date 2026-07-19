@@ -1,16 +1,15 @@
 import Image from "next/image";
-import { Search, SlidersHorizontal } from "lucide-react";
+import { SlidersHorizontal } from "lucide-react";
+import { SearchBar } from "@/components/home/SearchBar";
 
 export function ComparisonHeader({
-  inputValue,
-  onInputChange,
+  query,
   onSubmit,
   onOpenFilters,
   activeFilterCount,
 }: {
-  inputValue: string;
-  onInputChange: (value: string) => void;
-  onSubmit: () => void;
+  query: string;
+  onSubmit: (query: string) => void;
   onOpenFilters: () => void;
   activeFilterCount: number;
 }) {
@@ -31,28 +30,12 @@ export function ComparisonHeader({
             </div>
           </a>
 
-          <div className="flex min-w-0 flex-1 items-center gap-2 rounded-full border border-line bg-surface py-1.5 pl-4 pr-1.5 shadow-soft-sm">
-            <Search
-              size={18}
-              className="hidden flex-shrink-0 text-muted-light sm:block"
-            />
-            <input
-              type="text"
-              value={inputValue}
-              onChange={(e) => onInputChange(e.target.value)}
-              onKeyDown={(e) => {
-                if (e.key === "Enter") onSubmit();
-              }}
-              placeholder="Search Samsung S26, iPhone 15..."
-              className="min-w-0 flex-1 border-none bg-transparent px-1 py-2 text-sm outline-none placeholder:text-muted-light"
-            />
-            <button
-              onClick={onSubmit}
-              className="flex-shrink-0 rounded-full bg-primary px-5 py-2 text-sm font-bold text-white transition-colors hover:bg-primary-dark"
-            >
-              Search
-            </button>
-          </div>
+          <SearchBar
+            initialValue={query}
+            onSubmit={onSubmit}
+            variant="compact"
+            className="min-w-0 flex-1"
+          />
 
           <button
             onClick={onOpenFilters}

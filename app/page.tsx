@@ -26,6 +26,7 @@ import {
 } from "lucide-react";
 import { notchStyle } from "@/lib/notch";
 import Image from "next/image";
+import SearchBarHome from "@/components/home/SearchBarHome";
 
 const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -271,31 +272,7 @@ export default function KatiHoLandingPage() {
               </p>
 
               {/* Search box */}
-              <div
-                id="search"
-                className="flex max-w-[560px] flex-col gap-2 rounded-[28px] border border-line bg-surface p-1.5 pl-5 shadow-soft-md sm:flex-row sm:items-center sm:gap-2 sm:rounded-full sm:p-1.5 sm:pl-5"
-              >
-                <Search
-                  size={20}
-                  className="hidden flex-shrink-0 text-muted-light sm:block"
-                />
-                <input
-                  type="text"
-                  value={query}
-                  onChange={(e) => setQuery(e.target.value)}
-                  onKeyDown={(e) => {
-                    if (e.key === "Enter") handleSearch();
-                  }}
-                  placeholder="Search Samsung S25, iPhone 15, Redmi 13..."
-                  className="min-w-0 flex-1 border-none bg-transparent px-1 py-3 text-[15px] outline-none placeholder:text-muted-light"
-                />
-                <button
-                  onClick={handleSearch}
-                  className="w-full flex-shrink-0 rounded-full bg-primary px-6 py-3 text-sm font-bold text-white shadow-[0_6px_18px_rgba(15,110,93,0.28)] transition-all hover:-translate-y-0.5 hover:bg-primary-dark sm:w-auto"
-                >
-                  Search
-                </button>
-              </div>
+              <SearchBarHome />
               <p className="mt-4 text-[15px] font-semibold text-primary-dark">
                 Find cheaper deals. Compare variants. Save money.
               </p>

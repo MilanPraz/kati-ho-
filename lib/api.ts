@@ -15,3 +15,19 @@ export async function fetchProducts(query: string): Promise<Product[]> {
   const json: ProductsApiResponse = await res.json();
   return json.data ?? [];
 }
+
+export async function fetchSuggestions(
+  query: string,
+  limit: number = 10,
+): Promise<any> {
+  const res = await fetch(
+    `${API_BASE}/api/suggestions/?q=${encodeURIComponent(query)}&limit=${limit}`,
+    { cache: "no-store" },
+  );
+
+  if (!res.ok) {
+    throw new Error(`Request failed with status ${res.status}`);
+  }
+  const json: ProductsApiResponse = await res.json();
+  return json.data ?? [];
+}
