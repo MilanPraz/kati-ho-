@@ -9,7 +9,7 @@ export function DisplayModeToggle({
   onChange: (mode: DisplayMode) => void;
 }) {
   return (
-    <div className="inline-flex items-center gap-1 rounded-full border border-line bg-surface p-1 shadow-soft-sm">
+    <div className="inline-flex items-center gap-1 rounded-full border border-line bg-surface  shadow-soft-sm p-1">
       <button
         onClick={() => onChange("cards")}
         aria-label="View as cards"

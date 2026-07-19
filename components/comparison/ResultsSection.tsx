@@ -97,7 +97,7 @@ export function ResultsSection({
 
   return (
     <div>
-      <div className="mb-5 flex flex-wrap items-center justify-between gap-3">
+      <div className="mb-5 flex flex-wrap  items-center justify-between gap-3">
         <ViewToggle viewMode={viewMode} onChange={onViewModeChange} />
         <DisplayModeToggle
           displayMode={displayMode}
